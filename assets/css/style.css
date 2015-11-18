@@ -1,0 +1,167 @@
+#main-header h1 {
+	height: 128px;
+	background: url('../img/cd-128.png') no-repeat;
+	padding: 42px 5px 0 140px;
+	margin: 30px 0;
+	float: left;
+}
+
+#main-header a {
+	color: #333;
+	text-decoration: none;
+}
+
+#main-header a:hover {
+	color: #555;
+}
+
+#main-header span {
+	float: left;
+	font-size: 24px;
+	margin: 77px 5px 0 5px;
+}
+
+@media (max-width: 767px) {
+	#main-header h1 {
+		height: 64px;
+		background: url('../img/cd-64.png') no-repeat;
+		padding: 20px 0 0 70px;
+		margin: 30px 0;
+		font-size: 20px;
+		float: none;
+	}
+	
+	#main-header span {
+		float: none;
+	}
+}
+
+.divider {
+	margin: 0 5px;
+}
+
+.box {
+	background: #eee;
+	padding: 10px;
+	margin-bottom: 15px;
+}
+
+.box h2 {
+	margin: 0;
+}
+
+.dvd {
+	background: transparent url('../img/cd-64.png') no-repeat 10px 15px;
+	padding: 10px 10px 10px 80px;
+	margin: 10px 0 0 0;
+}
+
+#dvd-list .dvd {
+	background-color: #ddd;
+}
+
+#dvd-list .dvd:hover {
+	background-color: #ccc;
+	cursor: pointer;
+}
+
+#dvd-list a {
+	color: #333;
+	text-decoration: none;
+}
+
+.dvd h3 {
+	margin: 0 0 10px 0;
+}
+
+.dvd .info table {
+	font-size: 85%;
+	border: 0;
+}
+
+.dvd .info table td {
+	border: 0;
+	padding: 0 8px 0 0;
+}
+
+.dvd .info table th {
+	border: 0;
+	padding: 0 8px 0 0;
+	color: #666;
+}
+
+.box form {
+	margin-top: 10px;
+}
+
+.box .control-label {
+	font-size: 85%;
+	padding-right: 0;
+}
+
+.video {
+	background: #ddd;
+	padding: 10px;
+	margin: 10px 0 0 0;
+}
+
+.video.open {
+	background: #ccc;
+}
+
+.video h3 {
+	margin: 0;
+}
+
+.video a {
+	color: #333;
+	text-decoration: none;
+}
+
+.video a:hover {
+	color: #555;
+}
+
+.video a.up.active {
+	color: #5cb85c;
+}
+
+.video a.down.active {
+	color: #d9534f;
+}
+
+.video .info {
+	font-size: 85%;
+}
+
+.info span {
+	color: #666;
+}
+
+.video-wrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+	margin-top: 10px;
+}
+
+.video-wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.comment {
+	background: #ddd;
+	padding: 10px;
+	margin: 10px 0 0 0;
+}
+
+blockquote {
+	border: 0;
+	margin: 10px;
+	padding: 0;
+}
