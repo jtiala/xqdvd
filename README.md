@@ -1,6 +1,6 @@
 # xqDVD-o-Matic
 
-A simple site for collecting video suggestions for a DVD collection.
+A simple tool for collecting video suggestions for a DVD collection.
 
 ## History
 
