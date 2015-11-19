@@ -12,21 +12,13 @@ Clearly the community needed a tool. A tool that would make the excursion dvd cr
 
 The time was right. I had the knowhow to implement these ambitious plans. I had to do it.
 
-
-
 *I did it.*
 
-
-
-
-
-
-
-(For reals, I made this for an assignment for an user interface programming course at the university)
+(For reals, I made this for an assignment for an user interface programming course at the university. I didn't have much time, so it's not perfect.)
 
 ## Installing
 
-Create the database using `install.sql`. Then modify `config.php`. Everything should work.
+Create the database using `install.sql`. Then modify `config_example.php` and save it as `config.php`.
 
 ## Live example
 
