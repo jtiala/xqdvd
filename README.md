@@ -18,8 +18,8 @@ The time was right. I had the knowhow to implement these ambitious plans. I had 
 
 ## Installing
 
-Create the database using `install.sql`. Then modify `config_example.php` and save it as `config.php`.
+Create the database using either `install/psql.sql` or `install/mysql.sql`. Then modify `config_example.php` and save it as `config.php`.
 
 ## Live example
 
-The tool *should* be live at [my website](http://www.mattaku.fi/xqdvd). 
+The tool *should* be live at [my website](http://xqdvd.mattaku.fi/). 
