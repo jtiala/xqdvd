@@ -2,17 +2,12 @@
 -- please replace 'exqdvd_' in this file
 -- and config.php also!
 
--- drop old tables
-
-DROP TABLE `exqdvd_comments`;
-DROP TABLE `exqdvd_votes`;
-DROP TABLE `exqdvd_videos`;
-DROP TABLE `exqdvd_dvds`;
-
 -- create tables
 
+CREATE SEQUENCE exqdvd_dvds_id_seq;
+
 CREATE TABLE exqdvd_dvds (
-	id INTEGER NOT NULL AUTO_INCREMENT,
+	id INTEGER NOT NULL DEFAULT nextval('exqdvd_dvds_id_seq'),
 	title VARCHAR(128) NOT NULL,
 	author VARCHAR(128) NOT NULL,
 	email VARCHAR(255) NOT NULL,
@@ -23,38 +18,43 @@ CREATE TABLE exqdvd_dvds (
 	description TEXT,
 	public_url VARCHAR(255) NOT NULL,
 	admin_hash VARCHAR(8) NOT NULL,
-	PRIMARY KEY (id),
-	UNIQUE KEY admin_hash (admin_hash)
+	CONSTRAINT exqdvd_dvds_pk PRIMARY KEY (id),
+	CONSTRAINT eqdvd_dvds_admin_hash_idx UNIQUE (admin_hash)
 );
 
+CREATE SEQUENCE exqdvd_videos_id_seq;
+
 CREATE TABLE exqdvd_videos (
-	id INTEGER NOT NULL AUTO_INCREMENT,
+	id INTEGER NOT NULL DEFAULT nextval('exqdvd_videos_id_seq'),
 	dvd INTEGER NOT NULL,
 	title VARCHAR(128),
 	url VARCHAR(155),
 	suggested_by VARCHAR(128),
 	date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	PRIMARY KEY (id),
-	FOREIGN KEY (dvd) REFERENCES exqdvd_dvds(id) ON UPDATE CASCADE ON DELETE CASCADE,
-	UNIQUE KEY unique_url_dvd (url, dvd)
+	CONSTRAINT exqdvd_videos_pk PRIMARY KEY (id),
+	CONSTRAINT exqdvd_videos_dvd_fk FOREIGN KEY (dvd) REFERENCES exqdvd_dvds(id) ON UPDATE CASCADE ON DELETE CASCADE,
+	CONSTRAINT exqdvd_videos_url_dvd_idx UNIQUE (url, dvd)
 );
+
 
 CREATE TABLE exqdvd_votes (
 	ip VARCHAR(64) NOT NULL,
 	vote INTEGER NOT NULL,
 	video INTEGER NOT NULL,
-	PRIMARY KEY (ip, video),
-	FOREIGN KEY (video) REFERENCES exqdvd_videos(id) ON UPDATE CASCADE ON DELETE CASCADE
+	CONSTRAINT exqdvd_votes_pk PRIMARY KEY (ip, video),
+	CONSTRAINT exqdvd_votes_video_fk FOREIGN KEY (video) REFERENCES exqdvd_videos(id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
+CREATE SEQUENCE exqdvd_comments_id_seq;
+
 CREATE TABLE exqdvd_comments (
-	id INTEGER NOT NULL AUTO_INCREMENT,
+	id INTEGER NOT NULL DEFAULT nextval('exqdvd_comments_id_seq'),
 	name VARCHAR(128),
 	comment TEXT NOT NULL,
 	date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	dvd INTEGER NOT NULL,
-	PRIMARY KEY (id),
-	FOREIGN KEY (dvd) REFERENCES exqdvd_dvds(id) ON UPDATE CASCADE ON DELETE CASCADE
+	CONSTRAINT exqdvd_comments_pk PRIMARY KEY (id),
+	CONSTRAINT eqdvd_comments_dvd_fk FOREIGN KEY (dvd) REFERENCES exqdvd_dvds(id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 -- example data
