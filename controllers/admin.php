@@ -70,19 +70,19 @@ function viewVideoList($url, $adminHash, $dvd = 0) {
 		$video = new Video();
 		$video->load($id);
 		
-		include('views/admin/singleVideo.php');
+		include('../views/admin/singleVideo.php');
 	}
 	
 	if ($videoCount == 0) {
-		include('views/admin/noVideos.php');
+		include('../views/admin/noVideos.php');
 	}
 }
 
-include('views/header.php');
-include('views/admin/header.php');
+include('../views/header.php');
+include('../views/admin/header.php');
 
 viewVideoList($url, $adminHash, $dvd);
 
-include('views/admin/links.php');
-include('views/admin/settings.php');
-include('views/footer.php');
+include('../views/admin/links.php');
+include('../views/admin/settings.php');
+include('../views/footer.php');
