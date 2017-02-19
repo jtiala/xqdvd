@@ -41,7 +41,7 @@
 
 							<div class="form-group">
 								<label for="publishDate" class="col-sm-4 col-xs-12 control-label">Julkaisupäivämäärä</label>
-								<div class="col-sm-4">
+								<div class="col-sm-4 col-xs-10">
 									<input type="text" class="form-control" id="publishDate" name="publishDate" value="<?= empty($data['publishDate']) ? null : $data['publishDate']?>">
 								</div>
 								<div class="col-sm-2 col-sm-offset-2"><span class="label label-info" data-toggle="tooltip" data-placement="top" title="Muodossa YYYY-MM-DD">?</span></div>
@@ -49,7 +49,7 @@
 
 							<div class="form-group">
 								<label for="deadlineDate" class="col-sm-4 col-xs-12 control-label">Ehdotusten deadline</label>
-								<div class="col-sm-4">
+								<div class="col-sm-4 col-xs-10">
 									<input type="text" class="form-control" id="deadlineDate" name="deadlineDate" value="<?= empty($data['deadlineDate']) ? null : $data['deadlineDate']?>">
 								</div>
 								<div class="col-sm-2 col-sm-offset-2"><span class="label label-info" data-toggle="tooltip" data-placement="top" title="Muodossa YYYY-MM-DD">?</span></div>
