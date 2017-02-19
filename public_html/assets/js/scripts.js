@@ -13,11 +13,12 @@ $(document).ready(function() {
 		
 		if ($(article).hasClass('open') === true) {
 			videoWrapper.toggleClass('hidden');
-			videoWrapper.html('<iframe width="560" height="315" src="//www.youtube.com/embed/' + video + '" frameborder="0" allowfullscreen></iframe>');
+			if (! videoWrapper.has('iframe').length > 0) {
+				videoWrapper.append('<iframe width="560" height="315" src="//www.youtube.com/embed/' + video + '" frameborder="0" allowfullscreen></iframe>');
+			}
 			videoCaret.removeClass('fa-caret-down').addClass('fa-caret-up');
 		} else {
 			videoWrapper.toggleClass('hidden');
-			videoWrapper.html('');
 			videoCaret.removeClass('fa-caret-up').addClass('fa-caret-down');
 		}
 	});

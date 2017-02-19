@@ -1,7 +1,7 @@
 
-						<article class="video <?= $videoCount == 1 ? 'open' : null ?>">
+						<article class="video">
 							<div class="clearfix">
-								<h3 class="pull-left"><a href="#" class="open-video"><i class="video-caret fa <?= $videoCount == 1 ? 'fa-caret-up' : 'fa-caret-down' ?>"></i> <?=$video->title ?></a></h3>
+								<h3 class="pull-left"><a href="#" class="open-video"><i class="video-caret fa fa-caret-down"></i> <?=$video->title ?></a></h3>
 								<div class="pull-right thumbs">
 									<a href="#" class="up"><i class="fa fa-lg fa-thumbs-up"></i></a>
 									<a href="#" class="down"><i class="fa fa-lg fa-thumbs-down"></i></a>
@@ -18,6 +18,6 @@
 									<span>Ehdottaja:</span> <?=$video->suggestedBy ?>
 								</div>
 							</div>
-							<div class="video-wrapper <?= $videoCount == 1 ? null : 'hidden' ?>" data-video="<?=$video->url ?>">
+							<div class="video-wrapper hidden" data-video="<?=$video->url ?>">
 							</div>
 						</article>
