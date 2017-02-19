@@ -9,3 +9,4 @@ const DB_PREFIX = 'exqdvd_';
 
 const SITE_URL = 'http://www.example.com/xqdvd';
 const SITE_EMAIL = 'xqdvd@example.com';
+const SITE_PATH = '/var/www/xqdvd/';

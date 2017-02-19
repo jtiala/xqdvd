@@ -21,6 +21,9 @@ foreach ($resources as $resource) {
 	require($resource);
 }
 
+// Add sitepath to includepath
+set_include_path(get_include_path() . ":" . SITE_PATH);
+
 // Include the right controller
 if (! empty($URL) && $URL[0] == 'create') {
 	include('../controllers/createDVD.php');
