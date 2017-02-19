@@ -5,15 +5,20 @@ $(document).ready(function() {
 	$('.open-video').click(function(e) {
 		e.preventDefault();
 		var article = $(this).parent().parent().parent();
+		var videoWrapper = $(article).find('.video-wrapper');
+		var videoCaret = $(article).find('.video-caret');
+		var video = $(videoWrapper).data('video');
 
 		$(article).toggleClass('open');
 		
 		if ($(article).hasClass('open') === true) {
-			$(article).find('.video-wrapper').toggleClass('hidden');
-			$(article).find('.video-caret').removeClass('fa-caret-down').addClass('fa-caret-up');
+			videoWrapper.toggleClass('hidden');
+			videoWrapper.html('<iframe width="560" height="315" src="//www.youtube.com/embed/' + video + '" frameborder="0" allowfullscreen></iframe>');
+			videoCaret.removeClass('fa-caret-down').addClass('fa-caret-up');
 		} else {
-			$(article).find('.video-wrapper').toggleClass('hidden');
-			$(article).find('.video-caret').removeClass('fa-caret-up').addClass('fa-caret-down');
+			videoWrapper.toggleClass('hidden');
+			videoWrapper.html('');
+			videoCaret.removeClass('fa-caret-up').addClass('fa-caret-down');
 		}
 	});
 	

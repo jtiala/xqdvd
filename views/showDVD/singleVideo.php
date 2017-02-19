@@ -9,10 +9,15 @@
 							</div>
 							
 							<div class="info clearfix">
-								<div class="pull-left"><span>Ehdottaja:</span> <?=$video->suggestedBy ?></div>
-								<div class="pull-right"><span>Pistemäärä:</span> <span class="score"><?=$video->getScore() ?></span></div>
+								<div class="pull-left">
+									<span>Linkki:</span> <a href="https://youtube.com/watch?v=<?=$video->url?>" target="_blank">https://youtube.com/watch?v=<?=$video->url ?></a><br>
+									<span>Ehdotettu:</span> <?=$video->date ?>
+								</div>
+								<div class="pull-right text-right">
+									<span>Pistemäärä:</span> <span class="score"><?=$video->getScore() ?></span><br>
+									<span>Ehdottaja:</span> <?=$video->suggestedBy ?>
+								</div>
 							</div>
-							<div class="video-wrapper <?= $videoCount == 1 ? null : 'hidden' ?>">
-								<iframe width="560" height="315" src="//www.youtube.com/embed/<?=$video->url ?>" frameborder="0" allowfullscreen></iframe>
+							<div class="video-wrapper <?= $videoCount == 1 ? null : 'hidden' ?>" data-video="<?=$video->url ?>">
 							</div>
 						</article>
