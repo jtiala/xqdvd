@@ -2,7 +2,7 @@
 
 function viewDVDList() {
 	$dbh = new Database();
-	$sth = $dbh->prepare("SELECT id FROM " . DB_PREFIX . "dvds WHERE status = 1 OR status = 2 AND show_frontpage = true ORDER BY id DESC");
+	$sth = $dbh->prepare("SELECT id FROM " . DB_PREFIX . "dvds WHERE (status = 1 OR status = 2) AND show_frontpage = true ORDER BY id DESC");
 	$sth->execute();
 
 	$dvdCount = 0;
