@@ -2,7 +2,7 @@
 						<article class="video">
 							<div class="clearfix">
 								<h3 class="pull-left"><a href="#" class="open-video"><i class="video-caret fa fa-caret-down"></i> <?=$video->title ?></a></h3>
-								<div class="pull-right thumbs">
+								<div class="pull-right thumbs hidden">
 									<a href="#" class="up"><i class="fa fa-lg fa-thumbs-up"></i></a>
 									<a href="#" class="down"><i class="fa fa-lg fa-thumbs-down"></i></a>
 								</div>
@@ -14,7 +14,7 @@
 									<span>Ehdotettu:</span> <?=$video->date ?>
 								</div>
 								<div class="pull-right text-right">
-									<span>Pistemäärä:</span> <span class="score"><?=$video->getScore() ?></span><br>
+									<div class="hidden"><span>Pistemäärä:</span> <span class="score"><?=$video->getScore() ?></span></div><br>
 									<span>Ehdottaja:</span> <?=$video->suggestedBy ?>
 								</div>
 							</div>
