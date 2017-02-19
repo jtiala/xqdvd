@@ -9,6 +9,9 @@ if (empty($_POST)) {
 	header('Location: ' . SITE_URL);
 }
 
+if ((int) $data['math'] != 4) {
+	$commentErrors[] = 'Spämminesto ei mennyt läpi!';
+}
 if (strlen($data['name']) < 3 || strlen($data['name']) > 20) {
 	$commentErrors[] = 'Kommentoijan nimen tulee olla 3-20 merkkiä pitkä.';
 }
