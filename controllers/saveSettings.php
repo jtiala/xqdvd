@@ -35,7 +35,7 @@ if (! empty($data['deadlineDate']) && ! preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(
 }
 
 if (! empty($errors)) {
-	include('../controllers/admin.php');
+	include('controllers/admin.php');
 } else {
 	$dvd = new DVD;
 	$dvd->load($dvdID);

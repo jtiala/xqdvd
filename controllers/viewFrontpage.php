@@ -13,18 +13,18 @@ function viewDVDList() {
 		$dvd = new DVD();
 		$dvd->load($id);
 
-		include('../views/frontpage/singleDVD.php');
+		include('views/frontpage/singleDVD.php');
 	}
 	
 	if ($dvdCount == 0) {
-		include('../views/frontpage/noDVDs.php');
+		include('views/frontpage/noDVDs.php');
 	}
 }
 
-include('../views/header.php');
-include('../views/frontpage/header.php');
+include('views/header.php');
+include('views/frontpage/header.php');
 
 viewDVDList();
 
-include('../views/frontpage/createDVD.php');
-include('../views/footer.php');
+include('views/frontpage/createDVD.php');
+include('views/footer.php');

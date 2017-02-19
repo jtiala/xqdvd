@@ -13,11 +13,11 @@ function viewVideoList($dvd = 0) {
 		$video = new Video();
 		$video->load($id);
 		
-		include('../views/showDVD/singleVideo.php');
+		include('views/showDVD/singleVideo.php');
 	}
 	
 	if ($videoCount == 0) {
-		include('../views/showDVD/noVideos.php');
+		include('views/showDVD/noVideos.php');
 	}
 }
 
@@ -34,7 +34,7 @@ function viewComments($dvd = 0) {
 		$comment = new Comment();
 		$comment->load($id);
 		
-		include('../views/showDVD/singleComment.php');
+		include('views/showDVD/singleComment.php');
 	}
 }
 
@@ -42,15 +42,15 @@ $dvd = (int) $URL[0];
 $currentDVD = new DVD();
 $currentDVD->load($dvd);
 
-include('../views/header.php');
-include('../views/showDVD/header.php');
+include('views/header.php');
+include('views/showDVD/header.php');
 
 viewVideoList($dvd);
 
-include('../views/showDVD/suggestVideo.php');
-include('../views/showDVD/addComment.php');
+include('views/showDVD/suggestVideo.php');
+include('views/showDVD/addComment.php');
 
 viewComments($dvd);
 
-include('../views/showDVD/footer.php');
-include('../views/footer.php');
+include('views/showDVD/footer.php');
+include('views/footer.php');

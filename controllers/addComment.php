@@ -17,7 +17,7 @@ if (strlen($data['comment']) < 3 || strlen($data['comment']) > 256) {
 }
 
 if (! empty($commentErrors)) {
-	include('../controllers/showDVD.php');
+	include('controllers/showDVD.php');
 } else {
 	$comment = new Comment;
 	$comment->name = htmlspecialchars($data['name']);

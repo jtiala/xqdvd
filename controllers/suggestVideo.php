@@ -36,7 +36,7 @@ if (empty($data['url']) || ! youtube_id_from_url($data['url'])) {
 }
 
 if (! empty($errors)) {
-	include('../controllers/showDVD.php');
+	include('controllers/showDVD.php');
 } else {
 	$video = new Video;
 	$video->suggestedBy = htmlspecialchars($data['suggestedBy']);
