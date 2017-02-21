@@ -28,9 +28,6 @@ if ($videoAlreadySuggested) {
 if (strlen($data['suggestedBy']) < 3 || strlen($data['suggestedBy']) > 20) {
 	$errors[] = 'Ehdottajan nimen tulee olla 3-20 merkkiä pitkä.';
 }
-if (strlen($data['title']) < 3 || strlen($data['title']) > 20) {
-	$errors[] = 'Videon nimen tulee olla 3-20 merkkiä pitkä.';
-}
 if (empty($data['url']) || ! youtube_id_from_url($data['url'])) {
 	$errors[] = 'Videon URL on pakollinen ja videon tulee olla YouTubesta';
 }
@@ -40,13 +37,26 @@ if (! empty($errors)) {
 } else {
 	$video = new Video;
 	$video->suggestedBy = htmlspecialchars($data['suggestedBy']);
-	$video->title = htmlspecialchars($data['title']);
+	$video->title = youtube_title_from_url($data['url']);
 	$video->url = youtube_id_from_url($data['url']);
 	$video->dvd = $dvd;
 	
 	$video->create();
 	
 	header('Location: ' . SITE_URL . '/' . $dvd . '/' . urlencode($URL[1]));
+}
+
+/**
+ * Get YouTube video title from URL
+ *
+ * @param string $url
+ * @return string Sanitized YouTube video title. 
+ */
+function youtube_title_from_url($url) {
+	$youtubeApiURL = 'https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet&key=' . YOUTUBE_API_KEY . '&id=' . youtube_id_from_url($url);
+	$youtubeJsonObject = json_decode(file_get_contents($youtubeApiURL));
+	$youtubeVideoObject = $youtubeJsonObject->items[0];
+	return htmlspecialchars($youtubeVideoObject->snippet->title);
 }
 
 /**
