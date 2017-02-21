@@ -22,14 +22,6 @@
 								</div>
 								<div class="col-xs-2"><span class="label label-danger" data-toggle="tooltip" data-placement="top" title="Vaadittu kenttä">*</span></div>
 							</div>
-							
-							<div class="form-group">
-								<label for="title" class="col-sm-4 col-xs-12 control-label">Videon nimi</label>
-								<div class="col-sm-6 col-xs-10">
-									<input type="text" class="form-control" id="title" name="title" value="<?= empty($data['title']) ? null : $data['title']?>">
-								</div>
-								<div class="col-xs-2"><span class="label label-danger" data-toggle="tooltip" data-placement="top" title="Vaadittu kenttä">*</span></div>
-							</div>
 							<div class="form-group">
 								<label for="url" class="col-sm-4 col-xs-12 control-label">Videon URL</label>
 								<div class="col-sm-6 col-xs-10">
