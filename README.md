@@ -19,7 +19,3 @@ The time was right. I had the knowhow to implement these ambitious plans. I had 
 ## Installing
 
 Create the database using either `install/pgsql.sql` or `install/mysql.sql`. Then modify `config_example.php` and save it as `config.php`.
-
-## Live example
-
-The tool *should* be live at [my website](http://xqdvd.jtia.la/). 
