@@ -22,4 +22,4 @@ Create the database using either `install/pgsql.sql` or `install/mysql.sql`. The
 
 ## Live example
 
-The tool *should* be live at [my website](http://xqdvd.mattaku.fi/). 
+The tool *should* be live at [my website](http://xqdvd.jtia.la/). 
